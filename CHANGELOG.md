@@ -1,7 +1,7 @@
 # Changelog
 
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
-GoRex's repository (si-mods/gorex) and in this one's first commit.
+GoRex's repository (si-mods/gorex).
 
 ## 0.1.5
 

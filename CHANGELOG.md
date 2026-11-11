@@ -3,29 +3,6 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex) and in this one's first commit.
 
-## 0.2.0
-
-### Features
-
-* **welcome:** a walkthrough greets the first launch, on a stage over the whole window: it types and runs `quarex init`, then takes you through the look, the agents' skill and Full Disk Access, your keys migrated by an agent, and the keys worth knowing. It fits every window, from a small one to a 4K screen
-* **app:** the Cinematic motion style, the default: things come into focus, panes rise into place, a space opens on a ripple of glyphs, Settings' titles are typed and decode, and new tabs' names decode
-* **settings:** a Permissions page shows each macOS permission's state live, with Grant…, Ask… or Open, and a guide that walks you through System Settings in eleven languages; programs in QuaRex can ask for the microphone, the camera and the rest
-* **settings:** a Server page controls the session server: restart it, update it keeping every program, end its sessions, turn Remote Control on or off, see the clients attached, open its log or copy a debug report
-* **settings:** more of what Rex's Settings have: notifications per kind of news with sounds and the Dock badge, notices in the window, the agents' skill and hooks per agent, Developer Mode with an API console, a global key to show or hide QuaRex, tinting, compact panes, headers on hover, pinch to zoom, three app icons, a theme for light and dark, Ghostty and iTerm2 theme import and a theme editor
-* **terminal:** Insert Path (⌃⌘I) browses the pane's machine and types a path at the cursor, with the paths used last
-* **terminal:** Display P3, a forced cursor style, the blink's speed, smooth scrolling, rounded selections, the selection in QuaRex red with a flash on copy, Force Theme Palette for Text, and the cursor is a bar by default
-* **updates:** About has the update channel, Stable or Preview, and automatic checks and downloads
-* **windows:** QuaRex installs with a setup wizard, for all users in Program Files or for you alone. The setup closes a running QuaRex first, an install for all users replaces your own, and it updates itself with an administrator's approval
-* **launcher:** a split's picker opens in the half its pane will take, and blurs into place
-* **app:** a folder group's bar drags the panes under it, as a pane's header would
-* **quake:** Settings › Quake › Resize from the Window's Edges, on by default
-
-### Fixes
-
-* **quake:** on macOS the quake terminal slides in from above its screen and back out, as its Slide styles say: macOS kept it under the menu bar, where it only zoomed in and out
-* **quake:** resizing stays on the quake terminal's screen and keeps what it shows; the grabber keeps the spot under the pointer and snaps to presets with no jump
-* **windows:** a server the installer started finds pwsh, oh-my-posh and zoxide for its sessions, instead of falling back to Windows PowerShell
-
 ## 0.1.5
 
 ### Changes

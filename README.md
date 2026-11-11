@@ -19,11 +19,13 @@
 </p>
 <!-- END abd3lraouf-studios:hero -->
 
-QuaRex — from **Qua**ke and **Rex** — is a terminal that drops down from the
-top of the screen when you press a key, as Quake's console did, and keeps
-spaces of tabs and split panes running on this computer and the others you
-connect. Quit it and nothing stops: open it again and every tab, split and
-program is where you left it.
+<p align="center"><strong>Quake + Rex = QuaRex</strong></p>
+
+QuaRex is a terminal that drops down from the top of the screen when you
+press a key, as **Quake**'s console did, and keeps spaces of tabs and split
+panes running on this computer and the others you connect, as **Rex** does.
+Quit it and nothing stops: open it again and every tab, split and program
+is where you left it.
 
 <p align="center">
     <img src="art/readme/screenshot-panes.png" alt="QuaRex with four panes: git history, a system monitor, tests and a dev server" width="100%">

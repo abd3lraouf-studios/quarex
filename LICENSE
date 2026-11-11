@@ -1,0 +1,37 @@
+QuaRex — Proprietary Freeware License
+
+Copyright (c) 2026 Abdelraouf Sabri. All rights reserved.
+
+1. What this license covers. This license covers QuaRex: the apps the
+   owner publishes on this repository's releases, and the documentation,
+   artwork and other material in this repository ("the Software").
+
+2. What you may do. You may download the Software, install it and use it,
+   free of charge, for any purpose, and share its installers unmodified,
+   as the owner published them.
+
+3. What you may not do. QuaRex is closed source and proprietary. No right
+   to copy, modify, merge, publish, distribute, sublicense or sell the
+   Software, in whole or in part, is granted except as section 2 allows or
+   by the owner's prior written permission. You may not distribute a
+   modified build, nor offer the Software as a service.
+
+4. GoRex. QuaRex began from GoRex (github.com/si-mods/gorex, and
+   github.com/egoist/gorex before it), by Undefined K, EGOIST and windzu.
+   GoRex is published without a license: its authors keep every right in
+   their code, and the portions of QuaRex that come from GoRex remain
+   theirs. Nothing in this license grants, or claims, any right in those
+   portions.
+
+5. Third-party components keep their own terms, as NOTICE.md lists them:
+   MyGo (MIT License), Ghostty's libghostty-vt (MIT License), Font Awesome
+   Pro icons (the owner's Font Awesome Pro Commercial License; not for use
+   outside QuaRex), JetBrains Mono (SIL Open Font License 1.1), Symbols
+   Nerd Font (its own license) and Simple Icons (CC0 1.0). Where those
+   terms and this license differ, theirs govern their components.
+
+6. No warranty. The Software is provided "as is", without warranty of any
+   kind, express or implied, including the warranties of merchantability,
+   fitness for a particular purpose and non-infringement. In no event shall
+   the owner be liable for any claim, damages or other liability arising
+   from or in connection with it.

@@ -3,6 +3,25 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.3.0
+
+### Features
+
+* **settings:** Settings look and work as macOS 26's: the page's title in the title bar, capsule switches, segmented controls with icons, pop-up buttons, and pages that fill a wide window. Every page is reworded: short, plain, and a hint only where the label can't say it
+* **settings:** Appearance picks the color scheme, the interface style (Classic or Glass) and the app icon from pictures, on QuaRex's own field of glyphs
+* **settings:** theme cards show each theme's text, QuaRex's prompt in its green, its cursor and all sixteen of its colors
+* **settings:** the Server page is a stage: the machine lights up in its server's state, its name decodes, the devices attached orbit it with live connections, and the numbers that matter count up on frosted glass
+* **settings:** Integrations show each agent's skill and session hook, with Let agents name sessions, and the text agents read as a session starts
+* **agents:** agents label their session after their task when you let them, OpenCode and Pi too, which learn it from QuaRex's skill
+* **app:** six app icons, Default, Bright, Twilight, Aurora, Ember and Glacier, on macOS, Windows, Linux and iOS
+* **app:** as a split or a close moves the focus, the cursor flies to the pane that takes it
+
+### Fixes
+
+* **quake:** notifications from the quake terminal show again once it is hidden
+* **cli:** `quarex rename` takes flags after the name, as `quarex rename -s ID NAME --json`
+* **settings:** rows no longer show twice their padding
+
 ## 0.2.0
 
 ### Features

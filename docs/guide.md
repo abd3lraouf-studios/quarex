@@ -229,6 +229,7 @@ Installing it is in the [README](../README.md).
 | ⇧⌘N | | New session |
 | ⇧⌘O | Ctrl+Shift+O | Change session |
 | ⌃⌘] ⌃⌘[ | Ctrl+Shift+PageDown/PageUp | Next / previous session |
+| ⌃1…⌃9 | Alt+Shift+1…9 | Switch spaces |
 | ⌘J | Ctrl+Shift+J | Jump to the pane that needs you |
 | ⇧⌘J | | List what needs you, by state, across windows and hosts |
 | ⌃⌘S | Ctrl+Shift+S | Hide or show the tabs' sidebar |
@@ -255,9 +256,9 @@ dark or system; tab placement; pane headers; animation style; text size;
 language), Terminal (font, cursor style and blink, copy on
 selection; what Split and New Tab ask, and your profiles), Quake (see
 [Quake terminal](#what-it-does)), Theme (any of Ghostty's themes, or follow the config),
-Keyboard (QuaRex's shortcuts, read only), Remote (see
+Keyboard (view, record and reset shortcuts), Remote Access (see
 [Remote access](#remote-access) and [Remote hosts](#remote-hosts)),
-Network (see [Remote hosts](#remote-hosts) and [System Tailscale](#system-tailscale-desktop))
+Machines (see [Remote hosts](#remote-hosts) and [System Tailscale](#system-tailscale-desktop))
 and About (version, Check for Updates…).
 The choices go to `settings.json`, as do the sidebar's width and whether
 it is hidden.
@@ -604,11 +605,32 @@ already open. The layout stays the desktop's: rootshell shows it, and
 changes it through the QuaRex window. Setup on macOS and Windows hosts, the steps in
 rootshell, limits and troubleshooting: docs/rootshell.md.
 
+## QuaRex on mobile
+
+On the computer, turn on **Remote Access** in Settings › Remote and choose
+**Pair Mobile Device**. Open the QR scanner in QuaRex on your phone or
+tablet and scan the code. Approve the matching request on the computer and
+enable **All sessions** for the device if it should open existing
+terminals. The connection is encrypted, including when both devices
+are on the same network. For Tailscale or a Rex client that requires
+plain HTTP, see the gateway setup.
+
+Search on Home finds windows across connected computers and spaces. Tap
+the terminal's title to choose a different pane or window. Its More menu
+can split, rename or close a pane, browse remote files, open a tab in a
+folder and share the terminal's scrollback. On a QuaRex gateway that offers
+Insert Path, the file browser can paste a path quoted for the host's shell.
+Use Find in Terminal to search the screen and scrollback. On iPad, Split
+Layout opens the terminal panes of a tiled window side by side or stacked.
+Drag a divider to resize the split. The pane picker can minimize or
+restore a floating pane on the desktop when the gateway supports it.
+Notifications and separate light and dark themes are available in Settings.
+
 ## Rex's iPhone app
 
 Rex's own apps, the iPhone one among them, connect to QuaRex as to a Rex
 server: the QuaRex server serves Rex's API (revision 11), on the local
-network to the networks you allow (Settings › Remote), and on the tailnet
+network through opt-in **Legacy LAN access** (Settings › Remote), and on the tailnet
 through a Tailscale device of its own. A space is
 a Rex session, a tab a window, a pane a block, and a floating pane a
 floating layer; terminals stream as Ghostty snapshots, as Rex's do. Setup,

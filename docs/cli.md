@@ -183,7 +183,7 @@ wins over `-s`. An ambiguous target exits 3. `rename` gives a pane a label.
 clients from the server the app already runs. The server runs that
 gateway itself while the local network listener or built-in Tailscale is
 on; `quarex rexapi` alone runs one of its own, for development.
-`quarex rexapi lan on|off|status`, `quarex rexapi lan listen HOST:PORT` and
+`quarex rexapi lan on --allow-unauthenticated`, `quarex rexapi lan off|status`, `quarex rexapi lan listen HOST:PORT` and
 `quarex rexapi lan allow|deny NETWORK` set the listener on the local
 network; `quarex rexapi tailscale on|off|login|logout|rename|status`,
 `quarex rexapi pair` and `quarex rexapi call METHOD [JSON]` talk to the

@@ -3,6 +3,21 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.4.1
+
+* An update asks once whether to restart. Installing it, in the background too, never restarts your sessions or opens a second dialog. On Windows, Restart QuaRex says that running programs and their scrollback end, then reopens your tabs and folders on the new session server.
+* The updater's windows stay above a pinned Quake terminal.
+
+## 0.4.0
+
+* Each desktop Settings pane has an illustrated header and subtitle tuned for light and dark appearances. Visual indicators show server and permission states, with details available on hover and through assistive technology.
+* Settings headings and controls move again, and the Server pane shows live connections with a typing prompt and readouts that count up. Settings search finds more controls and moves keyboard focus to the selected result.
+* Settings stays above pinned Quake. Returning to Settings restores keyboard input there, and opening Quake before its first terminal is ready creates a single tab.
+* On macOS, the menu bar item opens its menu on the display where you click it.
+* Sessions, notes and layouts recover from interrupted saves. A rejected tab close preserves its notes.
+* Remote control requires explicit LAN access and rejects untrusted browser origins.
+* Cancelling a download before it is saved discards the partial file, even if the final bytes have already arrived.
+
 ## 0.3.0
 
 ### Features

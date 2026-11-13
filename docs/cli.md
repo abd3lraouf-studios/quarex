@@ -210,22 +210,46 @@ quarex capture -s <id>
 
 `quarex skill setup` installs a `quarex` skill that points at the guide the
 installed binary prints, so upgrading QuaRex updates what agents are told.
-It finds Claude Code (`~/.claude`), Codex (`~/.codex`), OpenCode
+It finds Claude Code (`~/.claude`), Codex (`~/.codex`), Gemini CLI
+(`~/.gemini`, or `$GEMINI_CLI_HOME/.gemini`), OpenCode
 (`~/.config/opencode`, or `$XDG_CONFIG_HOME/opencode`), and Pi
 (`~/.pi/agent`, or `$PI_CODING_AGENT_DIR`). A named `--agent` is set up
 even when its directory is absent; an unknown one is an error.
 
 The skill goes into Claude Code's own `skills/quarex` directory and into
-the shared `~/.agents/skills/quarex` directory that Codex, OpenCode and Pi
-read. With no agent found, only the shared skill is written.
+the shared `~/.agents/skills/quarex` directory that Codex, Gemini CLI,
+OpenCode and Pi read. With no agent found, only the shared skill is written.
 
-Claude Code and Codex also get a session-start hook, added to
-`~/.claude/settings.json` and `~/.codex/hooks.json`. The hook runs
+Claude Code, Codex and Gemini CLI also get a session-start hook, added to
+`~/.claude/settings.json`, `~/.codex/hooks.json` and
+`~/.gemini/settings.json`. The hook runs
 `quarex __internal session-start --agent NAME`, which prints the session,
 pane and connection for the agent's context, and labels the pane when
 `--pane-naming` is on. Only QuaRex's own hook is added or removed:
 every other setting and hook is left as it was, and a settings file that
 is not valid JSON is reported as a conflict instead of rewritten.
+
+Setup also makes each agent report its state to the pane it runs in, so
+QuaRex knows the agent is working, waiting for the user or done even when
+it prints no OSC 7501 report itself (kind `status` in setup and status).
+Claude Code, Codex and Gemini CLI get one hook per event in the same
+settings file; OpenCode gets a plugin, `~/.config/opencode/plugins/quarex.js`,
+and Pi an extension, `~/.pi/agent/extensions/quarex.js` (kind `plugin`).
+Each runs `quarex __internal agent-event --agent NAME --event EVENT` with
+the event's JSON on stdin; it sends the server a `status.report` request
+with an OSC 7501 body (`app=NAME`) for the session in `$QUAREX_SESSION`,
+prints nothing and always exits 0, and does nothing outside QuaRex.
+
+| Agent | working | blocked | done / idle / error | cleared |
+| --- | --- | --- | --- | --- |
+| Claude Code | UserPromptSubmit, PreToolUse, PostToolUse(Failure), ElicitationResult | PermissionRequest and Notification `permission_prompt` (permission); AskUserQuestion, Elicitation and other notifications (question); `auth_storage_failure`, StopFailure `authentication_failed`/`billing_error` (auth) | Stop (done, its last message); Notification `idle_prompt` (idle); StopFailure (error) | SessionEnd |
+| Codex | UserPromptSubmit, PreToolUse, PostToolUse | PermissionRequest (permission) | Stop (done); Interrupt (idle); `notify` `agent-turn-complete` (done) | SessionEnd |
+| Gemini CLI | BeforeAgent, BeforeTool, AfterTool | Notification `ToolPermission` (permission); the ask_user tool (question) | AfterAgent (done) | SessionEnd |
+| OpenCode | `session.status` busy/retry, `session.execution.started`, a reply | `permission.asked` (permission); `question.asked`, `form.created` (question) | `session.idle`, `session.execution.succeeded` (done); `session.error`, `session.execution.failed` (error); an abort (idle) | `session.deleted` |
+| Pi | `agent_start`, tool calls, `ui_prompt_end` | `ui_prompt_start` (confirm: permission, else question) | `agent_settled` (done, or idle when aborted) | `session_shutdown` |
+
+Subagents' events (Claude Code's SubagentStop, OpenCode's child sessions)
+are left out, so the pane shows the main agent.
 
 - `quarex skill status` reports each agent and whether its skill and hook
   are missing, current, outdated or in conflict. `--json` has the same
@@ -238,12 +262,14 @@ is not valid JSON is reported as a conflict instead of rewritten.
   `--force` replaces a `quarex` skill the user wrote.
 - `--project` writes into the current repository instead: the shared
   `.agents/skills/quarex`, or with `--agent claude`, `.claude/skills/quarex`
-  and a hook in `.claude/settings.local.json`. Codex project hooks are
-  skipped because Codex asks the user to trust the project and each hook;
-  set those up for the account instead.
+  and its hooks in `.claude/settings.local.json`. Codex and Gemini CLI
+  project hooks, and the OpenCode and Pi plugins, are skipped: Codex asks
+  the user to trust the project and each hook, and Gemini CLI's and the
+  plugins' project files are shared with the repository; set those up for
+  the account instead.
 - `quarex skill show` prints the same guide the skill tells agents to read.
-  `quarex __internal skill` and `quarex __internal session-start` are the
-  commands the installed files run and are not part of the documented
+  `quarex __internal skill`, `quarex __internal session-start` and
+  `quarex __internal agent-event` are the commands the installed files run and are not part of the documented
   command line.
 
 Host add/remove and remote `split`/`close` are not part of this slice.

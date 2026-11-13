@@ -89,7 +89,12 @@ Installing it is in the [README](../README.md).
   (F9 to F12, Ctrl+` or Alt+`, Ctrl+Space…), the height (30 % to the whole
   screen), the screen, whether it hides as QuaRex loses the focus, the tray
   icon, and starting at login, which the installed app turns on the first
-  time, its windows staying closed till you ask for one. On Windows QuaRex
+  time, its windows staying closed till you ask for one. It drops on the
+  pane that needs you, an agent waiting for an answer first; with hiding on,
+  it can stay down while an agent works there and go up once it is done;
+  it can open in the folder of the File Explorer or code editor window you
+  were in (VS Code, Cursor, Windsurf, VSCodium), reusing a tab already
+  there; and with several screens, it keeps the height you give it on each. On Windows QuaRex
   reads the key from the keyboard itself, as Windows keeps F12 from hot keys
   for its debugger, so F12 works with no change to the system; an app run as
   administrator keeps the key while it is in front. On a Mac keyboard F12
@@ -164,6 +169,17 @@ Installing it is in the [README](../README.md).
   notification. A session's most urgent program status shows in the
   session picker and the sidebar, and rootshell sees it as the pane's and
   tab's `agent_status`.
+- **Notification cards.** While QuaRex is not in front, its notices are
+  cards of its own, over every app (full-screen ones too), in the corner
+  Settings › Notifications names; in front, the window's notices show
+  them. A program that waits for you keeps its card until you see its pane
+  or close the card; one that asks for a permission has Allow and Deny,
+  which press Enter or Esc in its pane, so you can answer without leaving
+  the app you are in. A session shows one card, its latest, and a click on
+  a card opens its pane. The cards of the quake terminal's panes drop in at
+  the top of its screen, where it opens (Settings › Quake › Peek from the
+  top). Settings › Notifications lists the latest cards under Recent, and
+  its Style picks the system's notifications instead.
 - **Agent skill and hooks.** `quarex skill setup` finds Claude Code, Codex,
   OpenCode and Pi, installs a `quarex` skill into each, and adds a
   session-start hook to Claude Code and Codex that tells the agent its

@@ -3,6 +3,15 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.5.0
+
+* While QuaRex is not in front, notices are QuaRex’s own cards that float over every app, one per session. A permission’s card has Allow and Deny. A Quake pane’s card drops in at the top of Quake’s screen (Settings › Quake › Peek from the top). Settings › Notifications chooses cards or the system’s notices and lists recent ones.
+* Claude Code, Codex, Gemini CLI, OpenCode and Pi report whether they are working, waiting for you or done through their own hooks, which `quarex skill setup` installs. QuaRex knows an agent waits for a permission even when it prints nothing.
+* The Quake hotkey drops on the pane that needs you most. Stay While Working keeps Quake down while an agent works. Open in the Folder You Are In opens Quake in the folder of the File Explorer or editor window in front. With several screens, Quake keeps a height per screen.
+* A link or a file you open from QuaRex comes up in front of it, and of the Quake terminal, even when the browser was already running.
+* The focus comet between panes lands on the cursor an agent draws itself.
+* On Windows, the Quake terminal stays down while a screen capture tool’s selector (Shutr, Snipping Tool, ShareX, Greenshot) is in front, so it can be captured.
+
 ## 0.4.1
 
 * An update asks once whether to restart. Installing it, in the background too, never restarts your sessions or opens a second dialog. On Windows, Restart QuaRex says that running programs and their scrollback end, then reopens your tabs and folders on the new session server.

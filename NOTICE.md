@@ -23,5 +23,6 @@ the MIT License (LICENSE). Desktop packages use the mixed-license identifier
   (`internal/sshlink`). Its source is the module's, unmodified.
 - **JetBrains Mono**, SIL Open Font License 1.1 (`internal/app/theme/assets/fonts/OFL.txt`).
 - **Symbols Nerd Font**, its license in `internal/app/theme/assets/fonts/SymbolsNerdFont-LICENSE.txt`.
+- **Noto Sans Arabic UI** (v2.011, hinted, semi-condensed regular and bold), by the Noto Project Authors, SIL Open Font License 1.1 (`internal/app/theme/assets/fonts/NotoSansArabicUI-OFL.txt`).
 - **Simple Icons** brand marks of `internal/app/icons/assets/brands`, CC0 1.0 (`internal/app/icons/assets/brands/LICENSE.md`).
 - The iOS app's third-party notices are in `ios/THIRD_PARTY_NOTICES.md`.

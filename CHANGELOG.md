@@ -3,6 +3,18 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.6.1
+
+* Arabic and Hebrew that a program writes already reversed, as Claude Code and many other programs do on Windows for terminals without right-to-left support, read in their order, a word's letters joined, with no setting and no list of programs: QuaRex tells such text by the letters that only end words (ة, ى, Hebrew's final letters) standing at a word's start, and a line too short to tell follows the lines of the same command's output that do, never those of another program or command. Copying such text, and screen readers, give it in its reading order too.
+* A program that lays out its own right-to-left text can also say so with `CSI 8 l` (ECMA-48's BDSM, as iTerm2 reads it); QuaRex then keeps its columns and only joins its letters. `CSI 8 h` gives the layout back. A pane that reattaches, as after QuaRex restarts, keeps the modes its program set.
+* Brackets, guillemets and other mirrored punctuation in right-to-left text show their mirror, as `(نص)` reads.
+* Right-to-left support covers every right-to-left script Unicode knows (Syriac, Thaana, N'Ko and more), by Unicode's own data.
+* On Windows, a Git Bash tab shows the program running in it, as Claude Code, instead of always bash.
+* Arabic, Persian and Urdu in the terminal draw in QuaRex's own font, Noto Sans Arabic UI, the same on Windows, macOS and Linux, narrower so that words fit their cells, in regular and bold.
+* Settings › Terminal › Right-to-left lines aligns a line that starts in Arabic or Hebrew to the right edge, its punctuation where it reads. Programs can ask for it themselves, or set a line's direction, with the escape sequences iTerm2 also reads (CSI ? 2501 h, CSI 2 SP k). Each line keeps the direction it was written with after the program changes it, and after QuaRex reattaches or the window resizes.
+* In a right-to-left line the Left and Right arrow keys swap, so the one pointing left moves left as the text shows; programs can stop it (CSI ? 1243 l), and their queries of the right-to-left modes are answered.
+* Find matches Arabic with or without its harakat and tatweel, alef with hamza or madda as alef, ى as ي and ة as ه, presentation forms as their letters, and Hebrew with or without its niqqud: a search for الذاكرة finds الذّاكرة and الذاكره, and finds it in text a program wrote reversed. It selects the newest match first and stays right after full-screen programs and as the scrollback fills.
+
 ## 0.6.0
 
 * Arabic and Hebrew in the terminal read right to left, an Arabic word's letters joined and its tashkeel in its places, in bold, italic, underlined, struck or colored text too, even when only part of a word is, while tables, prompts and copied text keep their order. Settings › Terminal › Right-to-left text turns it off for a program that reverses such text itself.

@@ -4,7 +4,10 @@
 without opening a window; with no arguments it starts the app.
 
 `-S HOST` before a command uses a saved remote host from `hosts.json`, by
-its name or its alias, or an address, instead of this machine's server. Local-only commands (`hosts`,
+its name or its alias, or an address, instead of this machine's server. A
+saved host is reached by its routes, as the window reaches it: Tailscale
+(its address) first, then SSH (its SSH host, through `quarex ssh-bridge`
+there); one kept to a route uses that one alone. Local-only commands (`hosts`,
 `remote`, `server`, `update`) and window-only commands (`split`, `close`) do
 not apply remotely. `action` applies remotely when the host turns Remote
 Control on; `layout` reads a host's layout when it turns Share Layout on.
@@ -127,7 +130,8 @@ wins over `-s`. An ambiguous target exits 3. `rename` gives a pane a label.
 - `clients` prints the principal, peer key, whether it is remote, through a
   kept connection, and how many seconds it has been attached.
 - `hosts` lists saved remote hosts, each by its name and the alias it was
-  given in QuaRex, if any; addresses stay hidden.
+  given in QuaRex, if any, its routes (`tailscale`, `ssh`) and its SSH
+  host; addresses stay hidden. A host of SSH alone is listed too.
 - `remote status` shows the local server's remote access without its
   address; `remote control on|off` lets paired clients run app actions
   through the window. It applies to every paired client and every member

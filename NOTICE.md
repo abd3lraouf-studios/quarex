@@ -14,8 +14,13 @@ the MIT License (LICENSE). Desktop packages use the mixed-license identifier
 - **Lucide** (ISC, with MIT-licensed Feather icons) and **Font Awesome Free**
   brand glyphs (CC BY 4.0). The manifests and notices in
   `internal/app/icons/assets/icons/` and `site/assets/icons/` identify the
-  individual assets. Mobile also uses selected Font Awesome Pro glyphs
-  under their own terms (see `mobile/assets/pane-icons/SOURCES.md`).
+  individual assets. The desktop terminal picker and mobile also use
+  selected Font Awesome Pro glyphs under their own terms (see
+  `internal/app/icons/assets/icons/SOURCES.md` and
+  `mobile/assets/pane-icons/SOURCES.md`).
+- **yamux** (github.com/hashicorp/yamux), by HashiCorp, Mozilla Public
+  License 2.0: the streams a machine's SSH route carries
+  (`internal/sshlink`). Its source is the module's, unmodified.
 - **JetBrains Mono**, SIL Open Font License 1.1 (`internal/app/theme/assets/fonts/OFL.txt`).
 - **Symbols Nerd Font**, its license in `internal/app/theme/assets/fonts/SymbolsNerdFont-LICENSE.txt`.
 - **Simple Icons** brand marks of `internal/app/icons/assets/brands`, CC0 1.0 (`internal/app/icons/assets/brands/LICENSE.md`).

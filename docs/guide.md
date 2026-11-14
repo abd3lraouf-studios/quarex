@@ -427,6 +427,12 @@ What to know before turning it on:
   start any program with any environment. From a shell there it can
   reach the local socket, and so change the layout, remote access, and
   sharing itself. Trust it as you would an SSH key.
+- A device that logs in here over SSH connects without pairing: SSH's
+  keys decide who it is, not the allowlist, and revoking a key on the
+  Remote page does not end its SSH access. It is a remote client as any
+  other, with what Share open terminals gives it, never this machine's
+  own rights; it speaks as the key it has here over Tailscale, so the
+  sessions it opened are its own by either route.
 - Share open terminals (Settings › Remote, off by default, kept in
   `remote.json`) decides what else a client sees. Off, each client lists,
   attaches to, resizes and kills only the sessions it created; the others
@@ -550,6 +556,37 @@ of sessions this machine did not create close here and their sessions go
 on there.
 `go run ./tools/remotectl pair ADDRESS NAME` asks to pair from a machine
 without the app.
+
+#### Routes: Tailscale or SSH
+
+A host connects by whichever of its routes is ready: Tailscale (its
+address: tailcat, the system tailnet, or the coordinator's network)
+first, and SSH a moment later, or at once where Tailscale cannot answer,
+as on a computer whose Tailscale is stopped. SSH… on a host's row in
+Settings › Machines gives it an SSH host, an alias of `~/.ssh/config` or
+`user@host[:port]`, and Connect with: Automatic, Tailscale alone, or SSH
+alone, which never falls back. Check tries it once and says what it
+found. Add Remote Host… lists the hosts of the SSH configuration under
+Over SSH: adding one needs no pairing, and one whose server is a saved
+host's becomes that host's route.
+
+- SSH runs your own `ssh` (Windows' OpenSSH on Windows), in batch mode,
+  with your keys, agent and configuration, and nothing forwarded. It never
+  types a password nor accepts a host key: Open SSH Terminal opens a tab
+  running `ssh` to the host, where you do.
+- QuaRex must be installed on the host; the route finds it on the search
+  path, in `~/.local/bin`, `/usr/local/bin`, `/usr/bin`, or the app on a
+  Mac, and on a Windows host where QuaRex installs itself. On Linux it
+  starts the host's server when none runs; on macOS and Windows QuaRex
+  must be running there, as a server started from an SSH logon would run
+  outside the desktop's session, or end with the logon.
+- The row says the route that carries the host ("via SSH") and why the
+  other is not ready. A live connection stays on its route until it
+  drops; Use Tailscale moves it back at once. Panes keep their sessions
+  across a change of route.
+- A route that waits on you (a key to add, a host key to check, QuaRex to
+  install or open) is asked again every five minutes, or at once with
+  Retry, while the other route keeps trying.
 
 ### Teleport
 

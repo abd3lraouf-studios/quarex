@@ -3,6 +3,18 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.6.0
+
+* Arabic and Hebrew in the terminal read right to left, an Arabic word's letters joined and its tashkeel in its places, in bold, italic, underlined, struck or colored text too, even when only part of a word is, while tables, prompts and copied text keep their order. Settings › Terminal › Right-to-left text turns it off for a program that reverses such text itself.
+* Split Right, Split Down and New Tab ask where and with what in one picker: your projects beside what opens in them (profiles, bookmarks, shells, WSL, SSH hosts, pages), each program with its own mark. The search field keeps the keyboard: Tab switches columns, Alt+1–9 picks a project, Alt+O adds a folder, and ? shows every key.
+* QuaRex reaches a machine over SSH as well as Tailscale, by whichever route is ready first. Settings › Machines shows the route a machine uses and lets you set its SSH host or choose one route, and Add Remote Host… lists the hosts of your SSH configuration.
+* On Windows, MSYS2's zsh, bash and fish start as MSYS2's own launcher starts them, so Oh My Zsh and powerlevel10k load as on the Mac. Settings › Profiles › Default shell chooses what new tabs and panes start. Every WSL distribution and Windows Terminal profile shows once, the default distribution first.
+* Tint with Theme (Settings › Appearance) colors every window from the terminal theme, Settings too: the background, panels, text, hover and the accent, kept readable whatever the theme. A space's color stays its accent.
+* A trackpad scroll past the top of the scrollback no longer shakes the rows.
+* A Settings switch redrawn during an animation no longer crashes QuaRex.
+* Two notices that come at the same moment no longer replace each other.
+* Screen readers tell the Add Remote Host sheet's Add buttons apart: Add by address, Add SSH host, and Add beside each SSH host.
+
 ## 0.5.0
 
 * While QuaRex is not in front, notices are QuaRex’s own cards that float over every app, one per session. A permission’s card has Allow and Deny. A Quake pane’s card drops in at the top of Quake’s screen (Settings › Quake › Peek from the top). Settings › Notifications chooses cards or the system’s notices and lists recent ones.

@@ -3,6 +3,10 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.6.2
+
+* On macOS, the new tab picker's Option shortcuts work in its search field: Option+1 to 9 chooses a project, Option+O adds one and Option+H hides the selected row, where they typed ¡, ø and ˙ before.
+
 ## 0.6.1
 
 * Arabic and Hebrew that a program writes already reversed, as Claude Code and many other programs do on Windows for terminals without right-to-left support, read in their order, a word's letters joined, with no setting and no list of programs: QuaRex tells such text by the letters that only end words (ة, ى, Hebrew's final letters) standing at a word's start, and a line too short to tell follows the lines of the same command's output that do, never those of another program or command. Copying such text, and screen readers, give it in its reading order too.

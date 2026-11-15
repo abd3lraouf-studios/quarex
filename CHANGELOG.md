@@ -3,6 +3,17 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.6.4
+
+* AI agents get the whole terminal through MCP: `quarex mcp` is a Model Context Protocol server whose tools read and type into any pane (text, keys such as ctrl+c, pastes, clicks), wait for output, a prompt or an exit, run commands, and open, split, move, resize, zoom, focus, rename and close panes, tabs and spaces, with or without a window open; every action of the app runs too. Add it to Claude Code with `claude mcp add quarex -- quarex mcp`; `quarex mcp config` prints the entry for other agents. An agent cannot close or restart the pane it runs in unless it says so.
+* Browser panes open this machine's files: type a path such as `C:\site\index.html` or `~/site/index.html`, quoted or not, or a `file:` URL, and the page opens with its styles, images and links beside it. The pane's tab names the file, and it opens again when QuaRex starts. A website still cannot open a file of yours, and a typed path of no file says so.
+* On Windows, the agent hooks `quarex skill setup` installed ran through Git Bash as an interactive cmd that read each prompt as commands: a `>` in a prompt made a file, and the agents' status never reached QuaRex. The hooks are now one line every shell runs alike, and QuaRex repairs the old ones as it starts.
+* On Windows, `quarex` commands print in cmd and PowerShell again (they printed nothing unless piped), and Ctrl-C ends `quarex run` and its session.
+* Moving one box of a canvas to another window or a tab of its own no longer takes the whole canvas with it.
+* A pane no longer inherits an agent's no-color, no-pager settings when a `quarex` command an agent ran started the session server; on Windows a pane has one search path, with `quarex` on it.
+* Update checks no longer hang, and stop for good, after the network drops a connection, as a laptop waking on another network.
+* A phone that stops reading no longer holds up QuaRex's other remote clients; omp keeps its name and resumes after it updates itself on Windows; uploads the server would refuse are refused before they start.
+
 ## 0.6.3
 
 * On Windows, programs keep running through an update: Claude Code mid-answer, a build, a server. Each pane's program now runs in a small session host of its own, which the updated QuaRex takes over, its screen and all; a crash of the session server leaves them running too, and the next one takes them back.

@@ -113,8 +113,13 @@ Installing it is in the [README](../README.md).
   forward and reload in its header, and the page's title on its tab. The
   page lives while its tab does, and opens again at its URL when QuaRex
   starts. A browser pane belongs to this machine, so a remote tab takes
-  none, and Find searches terminals alone. Only http and https pages
-  open; a page is untrusted, so it reaches no QuaRex code, asks for no
+  none, and Find searches terminals alone. It opens http and https pages,
+  and this machine's files: type a path (`C:\site\index.html`,
+  `/home/me/site/index.html`, `~/site/index.html`, quoted or not) or a
+  `file:` URL, and the file opens with the files beside it, its styles,
+  images and links. A web page cannot open a file; a file's page can open
+  another file or a web page. Network shares open only through a mapped
+  drive. A page is untrusted, so it reaches no QuaRex code, asks for no
   permission, opens no window of its own and downloads nothing.
 - **Note panes.** New Note Tab, or Split with Note, opens a pane that is a
   sticky note: free text you type in place, named by its first line. The

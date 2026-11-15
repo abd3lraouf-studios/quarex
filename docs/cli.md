@@ -84,6 +84,7 @@ quarex config path | config check [FILE] | config reload
 quarex action run [-s SESSION] [--json] ACTION [KEY=VALUE...]
 quarex float [new|toggle|hide-all|raise|lower|cycle|move|resize|dock] [-s SESSION] [--json] [KEY=VALUE...]
 quarex teleport [--json] PANE HOST
+quarex [-S HOST] mcp | mcp tools [--json] | mcp config
 quarex rex-import [--rex SOCKET] [--session LABEL|ID] [--shell] [--resize] [--json]
 quarex rex-mirror --session ID --block ID [--label LABEL] [--socket PATH] [--resize]
 quarex version [--json]
@@ -171,6 +172,10 @@ wins over `-s`. An ambiguous target exits 3. `rename` gives a pane a label.
   recorded yet.
 - `action run` runs a built-in action by its ID, through the window.
   Values after the action are strings; the CLI does not guess types.
+- `mcp` serves the Model Context Protocol on stdin and stdout: tools that
+  give an agent every terminal, the layout and the app's actions
+  ([mcp.md](mcp.md)). `mcp tools` lists them, and `mcp config` prints the
+  entry an agent's MCP configuration takes.
 - `float` floats or docks panes through the window: `new` opens a floating
   terminal, `dock` puts the focused float back among the tiled panes, and
   the other subcommands name the `float.*` actions.

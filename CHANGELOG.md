@@ -3,6 +3,13 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.6.3
+
+* On Windows, programs keep running through an update: Claude Code mid-answer, a build, a server. Each pane's program now runs in a small session host of its own, which the updated QuaRex takes over, its screen and all; a crash of the session server leaves them running too, and the next one takes them back.
+* A pane that ran Claude Code, Codex or omp comes back running it after a crash, a reboot or a restart, on its own conversation and with the options it ran with, with no click: two agents in one folder each get their own conversation back. Settings › Terminal › Resume agents after a restart turns it off.
+* A pane that comes back after a crash or a reboot shows what it showed before, dimmed, above its new prompt. Settings › Terminal › Keep pane text for a restart turns it off.
+* What each pane ran is kept in the layout's journal too, so a crash that leaves layout.json behind still brings back the programs and the agents' conversations.
+
 ## 0.6.2
 
 * On macOS, the new tab picker's Option shortcuts work in its search field: Option+1 to 9 chooses a project, Option+O adds one and Option+H hides the selected row, where they typed ¡, ø and ˙ before.

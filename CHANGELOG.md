@@ -3,6 +3,12 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.6.5
+
+* On Windows, `quarex` runs in Git Bash and MSYS2 too, the shells AI agents' command tools use (Claude Code's among them): it said `command not found` there, so an agent's `quarex rename` and every other `quarex` command it ran failed. cmd and PowerShell run it as before.
+* Arabic that Claude Code writes on Windows no longer shows reversed where it holds ولا ("or") or words such as مثلًا and فعلًا: QuaRex took those lines for already in reading order and reversed them a second time, and the lines after them too.
+* Arabic and Hebrew read as they are set: a phrase's words are a space apart instead of spread over the terminal's columns, quotes and full stops stay beside the words, and in Claude Code's output on Windows commas and colons join their words, brackets and guillemets face the right way, and a line no longer shows reversed because one line near it was misjudged. Copied Arabic keeps its shadda and harakat on the right letters.
+
 ## 0.6.4
 
 * AI agents get the whole terminal through MCP: `quarex mcp` is a Model Context Protocol server whose tools read and type into any pane (text, keys such as ctrl+c, pastes, clicks), wait for output, a prompt or an exit, run commands, and open, split, move, resize, zoom, focus, rename and close panes, tabs and spaces, with or without a window open; every action of the app runs too. Add it to Claude Code with `claude mcp add quarex -- quarex mcp`; `quarex mcp config` prints the entry for other agents. An agent cannot close or restart the pane it runs in unless it says so.

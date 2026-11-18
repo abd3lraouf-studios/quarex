@@ -3,6 +3,10 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.6.9
+
+* On macOS, the Start at login switches respond at once, in Settings, the welcome and the menu bar's menu: QuaRex asked macOS about its login item every time it drew them, and waited for macOS to register it before the switch moved.
+
 ## 0.6.8
 
 * On macOS, QuaRex opens no window of its own as it starts when none was open as it quit, while the quake terminal or the menu bar icon runs it: a small window of the space closed last opened at every launch and every update. The Dock's icon or the menu bar's opens one as before. Its first launch still opens a window.

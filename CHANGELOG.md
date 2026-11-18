@@ -3,6 +3,14 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.6.7
+
+* When a tab holds terminals of more than one project, each terminal's background takes a faint wash of its project's color, a group's and a lone pane's alike, so projects side by side tell apart at a glance. The text and the colors programs set keep their look. Project color, in a pane's menu, changes it, and the tab's dots show each project.
+* The splits you are not on dim a little: the one under the pointer stays bright, else the focused one. Settings › Appearance › Dim other splits turns it off, and Dimming sets how much.
+* On macOS, QuaRex started at login opens no window when Open a window at login is off: it always opened one.
+* On Windows, Start at login can be turned on again after an update: the switch stayed greyed out until QuaRex was started anew.
+* Arabic that Claude Code writes on Windows shows right when it holds only common words, as كمّل, which showed reversed.
+
 ## 0.6.6
 
 * Long Arabic and Hebrew lines draw as one line of text: the gaps as wide as words that opened between Arabic and the numbers or English words inside it (`11:05`, `128`, `AI`) are gone, in Claude Code's answers too. Text after two spaces or a table's `|` keeps its columns.

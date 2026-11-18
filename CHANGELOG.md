@@ -3,6 +3,12 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.6.6
+
+* Long Arabic and Hebrew lines draw as one line of text: the gaps as wide as words that opened between Arabic and the numbers or English words inside it (`11:05`, `128`, `AI`) are gone, in Claude Code's answers too. Text after two spaces or a table's `|` keeps its columns.
+* Lines mixing Arabic, a number and English show in the right order: `a مدرس 42 ok` no longer puts `ok` before the Arabic, and table rows keep their cells in order. QuaRex now lays out right-to-left text by the Unicode Bidirectional Algorithm itself, matching a reference implementation on every line tested.
+* Copying Arabic that Claude Code wrote on Windows gives it in reading order: a list's `-` or `1.` first, the full stop last, numbers in place. Brackets around English in an Arabic sentence (`[Y/n]`) face the right way.
+
 ## 0.6.5
 
 * On Windows, `quarex` runs in Git Bash and MSYS2 too, the shells AI agents' command tools use (Claude Code's among them): it said `command not found` there, so an agent's `quarex rename` and every other `quarex` command it ran failed. cmd and PowerShell run it as before.

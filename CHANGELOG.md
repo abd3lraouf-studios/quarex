@@ -3,6 +3,11 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.6.8
+
+* On macOS, QuaRex opens no window of its own as it starts when none was open as it quit, while the quake terminal or the menu bar icon runs it: a small window of the space closed last opened at every launch and every update. The Dock's icon or the menu bar's opens one as before. Its first launch still opens a window.
+* As the keyboard moves to a pane that shows no cursor, as Claude Code asking a question or a page, the cursor's flight lands on the whole pane instead of its top-left corner.
+
 ## 0.6.7
 
 * When a tab holds terminals of more than one project, each terminal's background takes a faint wash of its project's color, a group's and a lone pane's alike, so projects side by side tell apart at a glance. The text and the colors programs set keep their look. Project color, in a pane's menu, changes it, and the tab's dots show each project.

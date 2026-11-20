@@ -188,6 +188,39 @@ wins over `-s`. An ambiguous target exits 3. `rename` gives a pane a label.
   session, as of a host the window does not know, both stay and it exits
   1.
 
+## Driving and testing the app
+
+`quarex ui` drives and reads the QuaRex app itself, as a user does and
+sees, so tests and tools need nothing outside QuaRex. `quarex test` runs an
+app of its own for that, apart from the one you use:
+
+```sh
+quarex test start --dir /tmp/qxt     # prints QUAREX_DIR=/tmp/qxt; set it for the commands below
+quarex ui wait --stable              # until the focused terminal draws the same twice
+quarex ui paste 'مرحبا بالعالم'       # the clipboard, then Paste, through the window
+quarex ui type ' ok'                 # typed text
+quarex ui key Enter                  # keys as accelerators: Left, Shift+Tab, CmdOrCtrl+V
+quarex ui render                     # JSON: each row, where each column shows, the cursor and the selection
+quarex test stop --clean
+```
+
+- `state` lists the windows, spaces and tabs; `render` what a terminal
+  drew: its rows' text, how right-to-left text is laid out, where each
+  column shows (Arabic draws narrower than its columns), and the cursor's
+  and the selection's rectangles; `text` its rows as text; `shot -o FILE`
+  a PNG of the window, or of a pane with `-s`.
+- `key KEY [--count N]`, `type TEXT`, `paste TEXT`, `click COL ROW`
+  (`--right`, `--double`), `drag COL ROW TO_COL TO_ROW`, `size W H`,
+  `focus` and `input EVENTS` (a JSON array of `click`, `key`, `text`,
+  `wheel`… events at window points) give the window input as the keyboard
+  and the pointer do. A cell is clicked where it shows.
+- `wait --contains TEXT` or `wait --stable` waits on the terminal, up to
+  `--timeout` (10s).
+- `-s`, `-w` or `-b` names a pane; without one, the window's focused pane.
+  The input commands focus the pane they name first.
+- They go to the app of `QUAREX_DIR`'s server, the one you use without it.
+  A remote client may not run them: they read the screen and type into it.
+
 `quarex rexapi` is not a command of this line: it serves Rex's API to Rex
 clients from the server the app already runs. The server runs that
 gateway itself while the local network listener or built-in Tailscale is

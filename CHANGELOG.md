@@ -3,6 +3,15 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.6.10
+
+* Typing after Arabic goes where the cursor shows: the cursor stood far from the text, past the room Arabic leaves in its columns, while what you typed showed elsewhere, after a dictated Arabic prompt and an English word typed after it in Claude Code, and after an Arabic paste at a PowerShell prompt. It now stands at the letter it is on, and after the last one as you type, the arrow keys moving it through the Arabic.
+* Selecting, clicking and highlighting Arabic follow its letters: a selection covered the columns past the last letter, a click could land on another letter, and search matches, backgrounds, underlines, links and an input method's window stood off the text.
+* Each row of an Arabic paragraph in Claude Code reads from the right, rows that start with a path or an English word (`C:\Users…`, `QuadCast`) too, which Claude Code laid out from the left, their parts out of order; its `/command` before Arabic no longer turns its row around.
+* A full stop in Arabic no longer shows as a second space after it, and a word typed two spaces after an Arabic sentence stays beside it.
+* Arabic typed or pasted on a shell's prompt line stays beside the prompt when the prompt shows a clock at the line's end: it sat in the middle of the line.
+* `quarex ui` drives and reads the app from its command line, as a user does and sees: it types, pastes, presses keys, clicks and drags, captures the window, and reports in JSON what a terminal drew, where each column shows, and the cursor and the selection; `quarex test start` runs an app of its own for tests, apart from the one in use ([cli.md](docs/cli.md)). A remote client may not use them.
+
 ## 0.6.9
 
 * On macOS, the Start at login switches respond at once, in Settings, the welcome and the menu bar's menu: QuaRex asked macOS about its login item every time it drew them, and waited for macOS to register it before the switch moved.

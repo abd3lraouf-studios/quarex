@@ -284,6 +284,46 @@ and About (version, Check for Updates…).
 The choices go to `settings.json`, as do the sidebar's width and whether
 it is hidden.
 
+#### Updates
+
+QuaRex checks for a new version every six hours and installs it in the
+background; nothing restarts on its own. Once it is installed, a **Restart
+to update** chip shows in the title bar (an icon with a dot at the
+sidebar's head): its panel says what the version brings, links to its
+notes, and has **Restart now** and **Later**. Your panes and their
+programs keep running through the restart (on Windows, where the session
+server cannot hand them over, panes reopen in their folders with their
+text). The tray's menu, the command palette (Restart to Update) and About
+offer the same restart. With QuaRex not in front, a notification says the
+update is ready, once per version.
+
+While a version installs in the background the chip says how far it is
+(Updating… 42%); one that fails to install says so (Update failed), with
+why and Try again, and QuaRex tries again within the hour. An important
+update shows in the attention color and is told even while QuaRex is in
+front. A release may reach users over a few days rather than all at once.
+
+An update keeps the version it replaced. If a new version does not get
+going three launches in a row, QuaRex goes back to the previous one by
+itself and does not install the failed one again on its own; Settings ›
+About (Previous version, Roll back) and the command palette (Roll Back to
+the Previous Version) go back by hand. QuaRex installed for all users, in
+Program Files, cannot roll back.
+
+A machine you connect to whose server runs an older QuaRex says so in its
+panel (the machine chip), with **Update**: its server installs the new
+version and restarts into it, its sessions kept. On a headless Linux
+machine, `quarex update --auto on` has its server do that by itself every
+few hours.
+
+Settings › About › Updates chooses the channel (Stable or Preview, which
+checks at once as it changes), whether QuaRex checks and downloads by
+itself, and the notification, and says when it last checked. With
+downloading off, a found version shows an **Update** chip instead, whose
+**Install…** opens the update window with its notes and progress. An
+install that needs an administrator's approval (QuaRex installed for all
+users, in Program Files) also waits for Install… rather than ask unprompted.
+
 Remote turns the server's remote access on and off, and manages it:
 whether allowed clients share the sessions open here, pairing a new device (Start pairing opens a five-minute window; each
 request shows its name and fingerprint, to Approve or Reject), the list

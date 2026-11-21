@@ -79,7 +79,7 @@ quarex hosts [ls] [--json]
 quarex skill show|setup|status|remove [--agent NAME] [--project] [--dry-run] [--json]
 quarex remote status [--json] | remote control on|off
 quarex server restart | upgrade
-quarex update
+quarex update [--auto on|off]
 quarex config path | config check [FILE] | config reload
 quarex action run [-s SESSION] [--json] ACTION [KEY=VALUE...]
 quarex float [new|toggle|hide-all|raise|lower|cycle|move|resize|dock] [-s SESSION] [--json] [KEY=VALUE...]
@@ -159,6 +159,12 @@ wins over `-s`. An ambiguous target exits 3. `rename` gives a pane a label.
   It installs the update without opening a window and hands over the
   running server when there is one. Use the same `QUAREX_DIR` as the
   server if you set one. On macOS use Check for Updates in the app.
+  `--auto on` has that server update itself every few hours, keeping its
+  sessions, as a headless machine wants (`autoupdate` in its directory;
+  `--auto off` stops it). The app's machine panel offers the same update
+  for a server of another machine that runs an older QuaRex (Update),
+  which the server does itself: only a release signed with QuaRex's key
+  installs.
 - `rex-import` reads a Rex server and makes its sessions in QuaRex: a space
   per session, a tab per window, a pane per block. Each pane runs this
   program's `rex-mirror`, which draws the Rex block and types into it, or

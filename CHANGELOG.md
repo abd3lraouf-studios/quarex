@@ -3,6 +3,19 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.6.12
+
+* An update keeps the version it replaced. If a new version doesn't get going three launches in a row, QuaRex goes back to the previous one by itself and doesn't install the failed one again on its own. Settings › About (Previous version, Roll back) and the command palette (Roll Back to the Previous Version) go back by hand. QuaRex installed for all users, in Program Files, can't roll back.
+* A machine you connect to whose server runs an older QuaRex says so in its panel (the machine chip), with **Update**: its server installs the new version and restarts into it, its sessions kept. On a headless Linux machine, `quarex update --auto on` has its server do that by itself every few hours.
+
+## 0.6.11
+
+* Updates install by themselves, and QuaRex tells you when one is ready: QuaRex checks every six hours and installs a new version in the background, never restarting on its own. A **Restart to update** chip then shows in the title bar; its panel says what the version brings, with its notes, and what a restart does to your panes, with **Restart now** and **Later**. The tray's menu, the command palette and About offer the same restart, and with QuaRex not in front a notification says it once per version.
+* While a version installs the chip says how far it is; one that fails says why, with Try again, and QuaRex tries again within the hour. An important update shows in the attention color and is told even while QuaRex is in front. Settings › About › Updates says when QuaRex last checked, checks at once when you change the channel, and has a switch for the notification.
+* With downloading off, a version found shows as an **Update** chip rather than a window opening on its own, and an install that would need an administrator's approval waits for you rather than asking unprompted.
+* A table in Claude Code whose rows hold Arabic keeps its columns: a row whose first cell is a number and whose next is Arabic showed reversed whole, its cells from the right, its bars out of the table's lines and a number moved into the next cell. It now shows as the other rows do, each cell's Arabic read from the right in its cell, and copies so.
+* Paste without invisible characters (Settings › Terminal, off by default): pasted text loses the zero-width spaces, direction marks and bidirectional overrides that show nothing but can break a command copied from a web page or a chat, or make code read other than it runs. Joiners inside emoji stay. Persian's half-space is one of these characters, so leave it off for Persian.
+
 ## 0.6.10
 
 * Typing after Arabic goes where the cursor shows: the cursor stood far from the text, past the room Arabic leaves in its columns, while what you typed showed elsewhere, after a dictated Arabic prompt and an English word typed after it in Claude Code, and after an Arabic paste at a PowerShell prompt. It now stands at the letter it is on, and after the last one as you type, the arrow keys moving it through the Arabic.

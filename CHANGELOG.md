@@ -3,6 +3,26 @@
 QuaRex's releases. QuaRex began from GoRex 0.18.0, whose changelog is in
 GoRex's repository (si-mods/gorex).
 
+## 0.6.13
+
+* Lines of output that start in Arabic or Hebrew show from the right by default (Settings › Terminal › Right-to-left lines), their punctuation where it reads; full-screen programs such as vim, less and htop keep their layout unless they ask for it. A shell's prompt stays on the left when a command starts in Arabic, and Arabic typed at the prompt no longer turns round mid-word.
+* Claude Code's Arabic on Windows shows as Claude Code writes it, a reply of one word too: QuaRex knows when a pane runs Claude Code on a Windows machine and no longer guesses each row's order from its letters. A code line with Arabic in it stays as written, and tables of many numbers redraw faster.
+* Copying Arabic gives the text each row shows: a row copies by the settings and the program it was written under, and Claude Code's output copies right on more lines (over 10,543 real lines, wrong copies fell from 645 to 382), and its dates and numbers no longer turn around (2026-10-14 copied as 14-10-2026). A table row copied alone, or one with an emoji such as ✅, keeps its cells in order, and a selection or search match that ends on an emoji covers all of it.
+* The cursor in mixed Arabic and English: Left and Right move it the way they point, and it stands where the next letter goes (in Claude Code's prompt it jumped with every space typed after an Arabic word). Where Arabic and English meet it follows your keyboard's language, which Windows and macOS tell QuaRex (elsewhere the last letter typed decides), and a bar cursor beside Arabic shows a small flag on the side typing goes. An emoji inside Arabic no longer makes the arrows skip a letter.
+* Long lines: a wrapped line keeps one direction and one order across its rows, also once its first row scrolls away; an Arabic word cut by the wrap stays joined; a window that attaches to a session keeps long lines wrapped, where they came back as separate rows; and no row flashes its old direction while you scroll. A heading's `##` before Arabic no longer draws over the space after it.
+* Persian lines a program wrote reversed show the right way round, as Arabic ones do. The command palette and the project and machine filters find Arabic names with or without harakat or hamza (احمد finds أحمد), Persian letters their Arabic twins. In every text field, Backspace after a letter with a haraka takes out the haraka alone.
+* Arabic in the app's own text reads in order: paths and names in tabs, pane headers, the palette, menus and notifications, where a path's Arabic folders showed swapped. A label cut short after Arabic shows its ellipsis where the Arabic stops, and tab names keep the marks under their letters. A program's title, or a name set through QuaRex's commands, can no longer turn the app's text around with a right-to-left override.
+* For programs that follow the terminal bidi recommendation: box mirroring (DECSET 2500), saving and restoring the bidi modes, and SPD; a full-screen program's modes no longer change the text behind it. QuaRex's bidi algorithm now resolves all 91,600 of Unicode's conformance tests as Unicode does.
+* Notification cards over the desktop and the window's notices share one face, with the time each came, which turns into a Dismiss button under the pointer; a permission card has Allow and Deny. A finished command is the program the shell ran, not the prompt's helper (oh-my-posh, Starship), and only a command that ran ten seconds or more is news.
+* A resumed agent runs with the config directory it ran with, also when a shell function named `claude` keeps two accounts apart: its conversation was not found. A program that asks the terminal's colors as it starts, as Codex does, gets the app's appearance: it drew light input boxes in a dark window. A tab whose program titles itself with its name and task (`codex.exe: fix the login bug`) shows that title.
+* On Windows, a new tab gets the environment variables set after QuaRex's server started (a `CLAUDE_CONFIG_DIR`, a proxy). A pane started with a command shows its program's tile, the iPhone's Settings shows each host's version (it showed 0.0.0-quarex), and a host whose server restarted is reachable again without restarting QuaRex.
+* Clicking a path to a pipe in a pane no longer holds a file transfer, and a file fetched from a pane never follows a link out of its folder. A change to the layout always shows in the window, where three races left it hidden until the next save. QuaRex installed for all users, in Program Files, removes the copies of replaced files that earlier updates left there.
+
+## 0.6.13-rc.1
+
+* A test build of the update flow, on the Preview channel only: Stable users never see it.
+* An update installed for all users, in Program Files, removes the copies of replaced files that earlier updates left there.
+
 ## 0.6.12
 
 * An update keeps the version it replaced. If a new version doesn't get going three launches in a row, QuaRex goes back to the previous one by itself and doesn't install the failed one again on its own. Settings › About (Previous version, Roll back) and the command palette (Roll Back to the Previous Version) go back by hand. QuaRex installed for all users, in Program Files, can't roll back.
